@@ -195,7 +195,7 @@ let filterResults = (data) => {
 window.onload = async () => {
     getCategories(mockDatabase);
     generateProductList(sortBySelected(filterResults(mockDatabase)));
-
+    sizeCheck();
 };
 
 // Event Listeners
@@ -213,3 +213,24 @@ const selectPriceElement = document.getElementById('price');
 selectPriceElement.addEventListener('change', async (event) => {
     generateProductList(sortBySelected(filterResults(mockDatabase)));
 });
+
+window.addEventListener('resize', async (event) => {
+    sizeCheck();
+})
+
+let sizeCheck = () => {
+    let windowWidth = Math.max(
+        document.body.scrollWidth,
+        document.documentElement.scrollWidth,
+        document.body.offsetWidth,
+        document.documentElement.offsetWidth,
+        document.documentElement.clientWidth
+    );
+
+    if(windowWidth <= 768) {
+        document.getElementById('content').className = "container-fluid d-flex justify-content-around mt-5 flex-column"
+    }
+    else {
+        document.getElementById('content').className = "container-fluid d-flex justify-content-around mt-5"
+    }
+}
