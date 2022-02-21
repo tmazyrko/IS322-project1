@@ -20,11 +20,60 @@
             </header>
 
             <main class="px-3">
-                <h1>Cover your page.</h1>
-                <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+
+                <div class="container-fluid d-flex justify-content-around mt-5" id="content">
+                    <div class="col-12 col-md-2">
+                        <div class="card shadow-5" id="filters">
+                            <div class="card-body">
+                                <form action="">
+
+                                    <div class="form-outline mb-4">
+                                        <label for="sort">Sort by</label>
+                                        <select class="form-select" id="sort" name="sortBy">
+                                            <option value="a-z">A-Z</option>
+                                            <option value="price-low-high">Price: Low-High</option>
+                                            <option value="price-high-low">Price: High-Low</option>
+                                        </select>
+                                    </div>
+
+                                    <hr>
+                                    <h5>Filters</h5>
+
+                                    <div class="form-outline mb-4">
+                                        <label for="category">Category:</label>
+                                        <select class="form-select" id="category" name="categoryList">
+                                        </select>
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        <label for="price">Shop by Price:</label>
+                                        <select class="form-select" id="price" name="priceRange">
+                                            <option value="-1">All</option>
+                                            <option value="0">$0 - $50</option>
+                                            <option value="1">$51 - $200</option>
+                                            <option value="2">$200+</option>
+                                        </select>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-9" id="productList">
+
+                    </div>
+
+                </div>
+
             </main>
 
         </div>
+
+
+
+        <script type="text/javascript" src="js/product-list.js"></script>
 
     </body>
 </html>
